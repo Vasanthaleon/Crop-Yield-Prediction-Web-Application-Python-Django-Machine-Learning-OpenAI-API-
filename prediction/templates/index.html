@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Yield Prediction</title>
+</head>
+<body>
+
+<h2>Crop Yield Prediction</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input name="city" placeholder="City" required>
+    <input name="state" placeholder="State" required>
+    <input name="crop" placeholder="Crop" required>
+    <input name="season" placeholder="Season" required>
+
+    <input name="area" placeholder="Area (hectare)" required>
+    <input name="soil_ph" placeholder="Soil pH" required>
+    <input name="nitrogen" placeholder="Nitrogen" required>
+    <input name="phosphorus" placeholder="Phosphorus" required>
+    <input name="potassium" placeholder="Potassium" required>
+
+    <button type="submit">Predict</button>
+</form>
+
+{% if result %}
+    <h3>Yield: {{ result }} tons/ha</h3>
+{% endif %}
+
+{% if ai_summary %}
+    <h4>AI Generated Explanation</h4>
+    <p>{{ ai_summary }}</p>
+{% endif %}
+
+{% if error %}
+    <p style="color:red">{{ error }}</p>
+{% endif %}
+
+</body>
+</html>

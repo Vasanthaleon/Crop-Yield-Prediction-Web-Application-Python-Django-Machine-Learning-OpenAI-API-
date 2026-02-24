@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h3 class="text-center mb-4">📊 Prediction History</h3>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Date</th>
+                <th>City</th>
+                <th>Crop</th>
+                <th>Season</th>
+                <th>Yield (tons/ha)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in data %}
+            <tr>
+                <td>{{ p.created_at }}</td>
+                <td>{{ p.city }}</td>
+                <td>{{ p.crop }}</td>
+                <td>{{ p.season }}</td>
+                <td>{{ p.predicted_yield }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No predictions found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <a href="/" class="btn btn-secondary">⬅ Back to Prediction</a>
+        <a href="/logout/" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+
+</body>
+</html>
