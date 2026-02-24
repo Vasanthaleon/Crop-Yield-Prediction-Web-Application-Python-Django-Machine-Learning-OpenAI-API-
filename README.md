@@ -1,0 +1,2 @@
+# Crop-Yield-Prediction-Web-Application-Python-Django-Machine-Learning-OpenAI-API-
+Developed an AI-powered crop yield prediction system using Python, Django, and machine learning. The application analyzes soil nutrients, weather data, and crop parameters to estimate yield and generate real-time insights using large language models. Features include user authentication, prediction history, and an intuitive web interface.
